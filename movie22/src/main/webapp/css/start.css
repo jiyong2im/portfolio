@@ -1,0 +1,96 @@
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+}
+html{
+    
+    overflow-x: hidden;
+    /* scroll-behavior: smooth; */
+    /* scroll-padding-top: 6rem; */
+}
+
+body{
+    background-image: url(/img/start3.png);
+}
+
+section{
+    
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.header{
+    padding: 1rem 3rem 0rem 3rem;
+    position: static;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    
+}
+.header .flex{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    /* display: flex;
+    align-items: center;
+    
+    position: relative;
+    padding: 1.5rem 2rem; */
+}
+
+
+
+.header .flex .navbar{
+    width: 6rem;
+    height: 2rem;
+    background-color: #fff;
+    border-radius: 55px;
+    text-align: center;
+    padding-top: 0.2rem;
+
+}
+
+.header .flex .navbar a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* 메인 */
+
+.main .content{
+    margin-top: 20rem;
+    text-align: center;
+}
+
+.main .content h2{
+    font-weight: normal;
+    font-size: 3.7rem;
+    color: #fff;
+    padding-bottom: 1rem;
+    
+    
+}
+.main .content h3{
+    font-size: 1.4rem;
+    font-weight: lighter;
+    color: #bbb;
+    padding-bottom: 1.5rem;
+}
+
+.main .content .share{
+    margin: 0 auto;
+    text-align: center;
+    width: 10rem;
+    height: 3rem;
+    padding-top: 0.7rem;
+    background-color: #FF9E0D;
+    border-radius: 55px;
+}
+.main .content .share a{
+    color: #fff;
+    
+}

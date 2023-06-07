@@ -1,0 +1,337 @@
+:root{
+    --main-color : #FF9E0D;
+    --black:#333;
+    --white:#fff;
+    --light-color:#666;
+    --border:.1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+
+}
+
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    
+    
+
+}
+
+
+*::selection{
+    background-color: var(--main-color); 
+    color:var(--white);
+}
+
+::-webkit-scrollbar{
+    height: .5rem;
+    width: 1rem;
+}
+
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+
+html{
+    background-color: black;
+    overflow-x: hidden;
+    /* scroll-behavior: smooth; */
+    /* scroll-padding-top: 6rem; */
+}
+
+section{
+    
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+body{
+	background-image: url('http://movieverse17.cafe24.com/img/backimg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.header{
+    padding: 1rem 3rem 0rem 3rem;
+    position: static;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .flex{
+    align-items: center;
+    display: flex;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem 2rem; */
+}
+
+.header .flex .navbar{
+    
+    margin-left: 3rem;
+}
+.header .flex .navbar a{
+    color: #fff;
+    padding-left: 2rem;
+    font-size: 1.3rem;
+}
+
+
+.header .flex .navbar  a:hover{
+    text-decoration: underline;
+    color:var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+    font-size: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/* .container{ width:680px; text-align:center; background-color:#E2E2E2;
+    height: 200px;margin:auto;} */
+.container{
+
+    max-width: 1200px;
+	height: 1392px;
+    margin: 0 auto;
+}
+
+.container .oh{
+    text-align: center;
+    padding: 15rem 0;
+}
+
+.container .oh h1{
+    margin-right: 20rem;
+    margin-bottom: 0.5rem;
+
+}
+
+
+.id{
+    margin-bottom: 0.5rem;
+}
+
+.id input{
+    width: 25rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    
+    
+}
+
+.pw input{
+    width: 25rem;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+.repw input{
+    width: 35rem;
+    height: 5rem;
+    font-size: 2rem;
+    
+    
+}
+
+.name input{
+    width: 35rem;
+    height: 5rem;
+    font-size: 2rem;
+}
+
+.address input{
+    width: 35rem;
+    height: 5rem;
+    font-size: 2rem;
+    
+    
+}
+
+.nick input{
+    width: 35rem;
+    height: 5rem;
+    font-size: 2rem;
+    
+    
+}
+
+
+
+.login{
+    padding: 2rem 0;
+}
+
+
+
+.login input{
+    width: 25rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    background-color: #FF9E0D;
+    border: none;
+    color: var(--white);
+
+}
+
+.join{
+
+    font-size: 1.5rem;
+   
+    
+}
+
+.join a{
+    text-align: center;
+    color: #fff;
+  
+}
+
+
+
+
+
+
+.header .flex .navbarRight{
+	margin-left: 30rem;
+	display: flex;
+	
+}
+
+
+.serch_Img{
+   
+    width: 38px;
+    height: 35px;
+    left: 350px;
+	padding-left: 0.4rem;
+    margin-top :1.1rem;
+}
+.serch{
+	/* 검색하기 */
+
+position:absolute;
+
+width: 290px;
+height: 26px;
+left: 1110px;
+top: 37px;
+
+
+}
+input#searchInput{
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+margin-top :1.2rem;
+font-size: 18px;
+line-height: 40px;
+width:450px;
+height:35px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+border: 0px solid #000;
+color: black;
+
+
+
+
+}
+.logintext{
+    color: #fff;
+    padding-left: 2rem;
+    font-size: 1.3rem;	
+    margin-top :1.7rem;
+    
+}
+
+
+.backimg{
+	width: 1928px;
+	height: 866px;
+	 object-fit: cover;
+	display: flex;
+	margin-bottom:40px;
+}
+
+.sex{
+	    color: #fff;
+		font-size: 1.5rem;	
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+@media (max-width:991px) {
+    
+
+}
+
+@media(max-width:768px){
+    #menu-btn{
+        display: inline-block;
+        transition: .2s linear;
+    }
+
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+        
+    }
+
+    .header .flex .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background-color: var(--white);
+        border-top: var(--border);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 00% 100%);
+    }
+
+    .header .flex .navbar a{
+        display: block;
+        margin: 2rem;
+    }
+    
+
+    
+
+    
+    
+}
+
+
+@media(max-width:450px){
+
+}
+

@@ -1,0 +1,285 @@
+section{
+
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.header{
+    padding: 2rem 3rem 0rem 3rem;
+    position: absolute !important;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .flex{
+    align-items: center;
+    display: flex;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem 2rem; */
+}
+
+.header .flex .navbar{
+
+    margin-left: 3rem;
+}
+.header .flex .navbar a{
+    color: #fff;
+    padding-left: 2rem;
+    font-size: 1rem;
+}
+
+
+.contentBox{
+
+
+	z-index:2;
+	width: 1369px;
+	position: relative;
+	margin-top:-555px;
+	height : 2000px;
+	margin-left:301px;
+	background: #BDBDBD;
+	border-radius: 30px 30px 0px 0px;
+}
+
+
+.contentBoxPoster{
+	position: relative;
+	padding: 2rem 1rem;
+	width: 300px;
+}
+
+.contentBoxPoster img{
+	border-radius:10px;
+	position: absolute;
+	width: 282px;
+	height: 424px;
+}
+
+.contentBoxInfo{
+	position: absolute; top:500px; left:550px;
+}
+
+.backimg{
+	width: 1928px;
+	height: 866px;
+	 object-fit: cover;
+	display: flex;
+	margin-bottom:40px;
+}
+
+.backGradation{
+	background: linear-gradient(360deg, #000000 0%, rgba(11, 11, 11, 0.815886) 33.33%, rgba(100, 100, 100, 0.558125) 39.58%, rgba(217, 217, 217, 0.377358) 48.44%, rgba(217, 217, 217, 0) 54.17%);
+	width: 1928px;
+	height: 866px;
+		position: absolute;
+		z-index:1;
+}
+
+.ul-text{
+	top:63px;
+  list-style:none;
+	position: relative;
+
+height: 424px;
+left: 111px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 41px;
+
+align-items: center;
+
+color: #030303;
+
+}
+.ul-text li{
+color:grey;
+}
+.ul-text li b{
+color: #030303;
+
+}
+
+.content_poster {
+	border-radius:10px;
+	position: absolute;
+	width: 300px;
+	height: 450px;
+}
+.content_bookmark {
+	width:30px;
+	height:30px;
+	position: absolute;
+	top:0px;
+	left: 280px;
+
+}
+.logo_size {
+	border-radius:10px;
+	padding: 10px;
+	width: 100px;
+	height: 57px;
+}
+
+
+.movie_bookmark{
+	position: relative;
+top:63px;
+left: 65px;
+float: left;
+width: 300px;
+height: 450px;
+
+}
+
+
+.star-ratings {
+  color: #aaa9a9;
+  position: relative;
+  unicode-bidi: bidi-override;
+
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: #2b2a29;
+}
+
+.star-ratings-fill {
+  color: #fff58c;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-text-fill-color: gold;
+}
+
+.star-ratings-base {
+  z-index: 0;
+  padding: 0;
+}
+
+.myReview {
+	position: absolute;
+	top: 950px;
+	left: 100px;
+}
+
+.myReview textarea {
+	width: 200%;
+	height: 200px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: solid 2px #1E90FF;
+	border-radius: 5px;
+	font-size: 16px;
+	resize: both;
+}
+
+.otherReviewBox{
+	position: absolute;
+	top: 1500px;
+	left: 200px;
+}
+
+.infoBox{
+	position: absolute;
+    top: 80px;
+    left: 450px;
+}
+
+.cast{
+	position: absolute;
+	top: 550px;
+    left: 100px;
+}
+
+.cast .director {
+	position: absolute;
+	width: 200px;
+	height: 400px;
+
+}
+
+.cast .actor {
+	position: absolute;
+	left: 250px;
+	width: 1000px;
+	height: 400px;
+
+}
+
+.cast .Pimg{
+	border-radius:10px;
+	position: absolute;
+	width: 60px;
+	height: 90px;
+}
+
+.cast .actor .actorName1{
+	position: absolute;
+	width: 200px;
+
+}
+
+.cast .actor .actorName2{
+	position: absolute;
+	left: 200px;
+	width: 200px;
+
+}
+.cast .actor .actorName2{
+	position: absolute;
+	left: 400px;
+	width: 200px;
+
+}
+.cast .actor .actorName2{
+	position: absolute;
+	left: 600px;
+	width: 200px;
+
+}
+
+
+#myform fieldset{
+    display: inline-block;
+    direction: rtl;
+    border:0;
+}
+#myform fieldset legend{
+    text-align: right;
+}
+#myform input[type=radio]{
+    display: none;
+}
+#myform label{
+    font-size: 3em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+#myform label:hover{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform label:hover ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#reviewContents {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 1.5px #D3D3D3;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}

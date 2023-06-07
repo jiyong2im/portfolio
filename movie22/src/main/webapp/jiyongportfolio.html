@@ -1,0 +1,182 @@
+
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	    <link rel="stylesheet" href="http://movieverse17.cafe24.com/css/jiyong.css">
+	    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+        <title>정지용 포트폴리오</title>
+        <script>
+        $(document).ready(function(){
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                $(this).closest('ul').find('.active').removeClass('active'); 
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function(){
+                        window.location.hash = hash;
+                    });
+                }       
+            });
+            
+            $(window).scroll(function() {
+              $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+          
+                var winTop = $(window).scrollTop();
+                  if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+        Footer
+
+        </script>
+        
+        
+    </head>
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+        <!-- nav -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>                         
+                    </button>
+                    <a class="navbar-brand" href="#myPage">정지용</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">소개</a></li>
+                        <li><a href="#skills">기술</a></li>
+                        <li><a href="#works">프로젝트</a></li>
+                        <li><a href="#contact">소통</a></li>                    
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- intro -->
+        <div class="container-fluid intro-bg text-center">
+			<br>
+			<br>        
+            <h2 style="margin-top: 50px">포트폴리오</h2>
+            <img src="http://movieverse17.cafe24.com/img/jiyong.jpeg" class="img-responsive img-circle" style="display:inline" alt="Boreumlee" width="250" height="250">
+            <h4 style="margin-top: 30px">안녕하세요 <strong >백엔드 개발자 </strong>정지용입니다.
+                <br>
+        </div>
+
+        <!-- about -->
+        <div id="about" class="container-fluid about-bg text-center">
+            <h2>자기소개</h2>
+            <div class="row">
+                <div class="container">
+                    <div class="col-sm-4"  style="text-align: right !important;">
+                        <img src="http://movieverse17.cafe24.com/img/jiyong1.jpeg" alt="지용" class="img-responsive img-rounded" >
+                    </div>
+                    <div class="col-sm-8 text-left">
+                        <h2 style="font-weight: 400; font-size: 24px">도전하는 개발자 정지용입니다.</h2>
+<br>
+                        <p>동두천중앙고등학교 정보전자과를 졸업해 전자기기의 대한 기본적인 지식과,
+                       	 <br> 신구대학교 IT소프트웨어과를 진학하여,
+                            <br>Java, Python, MySQL, JSP servlet, 등 백엔드에 관련한 기본 지식을 습득했습니다.
+                            <br>학교 수업 이외의 개인적으로 Java, Kotlin, Spring Boot에 대한 중급지식을 공부하였습니다.
+                           <br>
+                           <br>
+                            <br>현재는 개인 프로젝트와 팀 프로젝트를 개발중에 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- skills -->
+        <div id="skills" class="container-fluid skills-bg text-center">
+            <h2>기술</h2>
+            <br>
+            <div class="row slideanim">
+                <div class="col-sm-4">
+                    <i class="fab fa-java fa-7x" style="color: #0A73B8"></i>
+                    <h3>JAVA</h3>
+                </div>
+                <div class="col-sm-4">
+                    <img src="https://velog.velcdn.com/images/artistop333/post/01bcbfed-3d14-4a66-bfcf-c1a3eb9aa63c/image.png" alt="Spring Boot" style="width:100px; height:100px;">
+                    <h3>Spring Boot</h3>
+                    
+                </div>
+                <div class="col-sm-4">
+                    <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_kotlin_icon_130487.png" alt="Kotlin" style="width:100px; height:100px;">
+                    <h3>Kotlin</h3>
+                </div>
+                
+            </div>
+                <br><br>
+            <div class="row slideanim">
+
+                <div class="col-sm-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/28/28968.png" alt="JSP" style="width:100px; height:100px;">
+                    <h3>JSP</h3>
+                </div>
+                                <div class="col-sm-4">
+                    <img src="https://avatars.githubusercontent.com/u/1483254?s=200&v=4" alt="MyBatis" style="width:100px; height:100px;">
+                    <h3>MyBatis</h3>
+                    
+                </div>
+                
+				 <div class="col-sm-4">
+                    <i class="fab fa-git fa-7x"></i>
+                    <h3>Git</h3>
+                </div>
+            </div> 
+        </div>
+
+        <!-- works -->
+        <div id="works" class="container-fluid works-bg text-center">
+            <h2>프로젝트</h2>
+            <br>
+            <div class="row text-center slideanim">
+                <div class="col-sm-4">
+                <div class="thumbnail">
+					<a href="#hospital" data-toggle="collapse">
+                	<img src="http://movieverse17.cafe24.com/img/hihihi.png" alt="병원환자관리" class="poster">
+					<p><strong>MOVIEVERSE</strong></p>
+                    <p>영화추천 웹사이트</p>
+                    <div id="hospital" class="collapse">
+ 					 <p>
+                    <a href="http://movieverse17.cafe24.com/" class="btn btn-default" role="button" target="_blank">show page</a>
+                    <a href="https://github.com/jiyong2im" class="btn btn-default" role="button" target="_blank">code</a>
+                                 </p>
+                            </div>
+                          </a>
+                      </div>
+                  </div>
+
+            </div>
+        </div>
+        <!-- contact -->
+        <div id="contact" class="container-fluid contact-bg text-center">
+            <h2 class="">소통</h2>
+            <p><i class="fas fa-envelope"></i></span> jjy487912@gmail.com</p>
+            <p><i class="fab fa-github"></i> 정지용의 깃허브  <a href="https://github.com/jiyong2im" target="_blank" class="contact-link">github</a></p>
+        </div>
+        <!-- footer -->
+        <footer class="container-fluid footer-bg text-center">
+            <a href="#myPage" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+        </footer>       
+    </body>
+    <script src="app.js"></script>
+</html>

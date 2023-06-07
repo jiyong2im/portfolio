@@ -1,0 +1,193 @@
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+
+}
+
+html{
+    background-color: black;
+    overflow-x: hidden;
+    /* scroll-behavior: smooth; */
+    /* scroll-padding-top: 6rem; */
+}
+
+section{
+    
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.header{
+    padding: 2rem 3rem 0rem 3rem;
+    position: static;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .flex{
+    align-items: center;
+    display: flex;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem 2rem; */
+}
+
+.header .flex .navbar{
+    
+    margin-left: 3rem;
+}
+.header .flex .navbar a{
+    color: #fff;
+    padding-left: 2rem;
+    font-size: 1rem;
+}
+
+/* main */
+.main .layer{
+    
+    background-color: #fff;
+    width: 40rem;
+    height: 45rem;
+    margin: 5rem 0 0 40rem;
+    
+}
+
+.main .layer .choice{
+    text-align: center;
+    float: left;
+    width: 40rem;
+    height: 3rem;
+    display: flex;
+    
+}
+
+.main .layer .leader{
+    width: 20rem;
+    height: 3rem;
+    background-color: #cccccc;
+    
+    
+}
+
+.main .layer .leader h2{
+    font-size: 1rem;
+    padding-top: 0.7rem;
+
+}
+
+.main .layer .member{
+    width: 20rem;
+    height: 3rem;
+    background-color: #FF9E0D;
+}
+
+.main .layer .member h2{
+    font-size: 1rem;
+    padding-top: 0.7rem;
+}
+
+/* 내용 */
+
+
+.main .layer .card{
+    padding-top: 5rem;
+    margin-left: 5.5rem;
+    
+}
+.main .layer .card img{
+    padding:0rem 2.8rem 0 0;
+    
+}
+
+.main .layer .in{
+    margin-top: 2rem;
+    margin-left: 5.5rem;
+
+}
+.main .layer .in div{
+    margin-top: 1.5rem;
+}
+
+.main .layer .in h2{
+    font-size: 1.2rem;
+}
+
+.main .layer .in input{
+    height: 1.5rem;
+    margin-top: 0.6rem;
+    border: solid 1px;
+}
+
+
+
+
+/* .main .layer .in .bank input{ 
+    width: 23rem;
+} */
+
+.main .layer .in .number input{
+    width: 5rem;
+    margin-right: 1rem;
+
+}
+
+
+
+.main .layer .in .cvc .vert{
+    display: flex;
+    
+}
+.main .layer .in .cvc .vert h2{
+    padding-right: 7.3rem;
+}
+.main .layer .in .cvc input{
+    margin-right: 1rem;
+}
+
+
+.main .layer .in .cvc .cvcnum{
+    width: 11rem;
+    
+}
+.main .layer .in .cvc .yymm{
+    width:5rem;
+   
+}
+
+
+.main .layer .in .name input{
+    width: 23rem;
+}
+
+.main .layer .in .since input{
+    width: 23rem;
+}
+
+.main .layer .in .mon input{
+    width: 23rem;
+}
+
+.main .layer .in .day input{
+    width: 23rem;
+}
+
+.main .layer .in .btn{
+    margin-top: 17.7rem;
+}
+
+.main .layer .in .btn input{
+    margin-left: -5.5rem;
+    width: 40rem;
+    height: 3.5rem;
+    border: none;
+    background-color: #FF9E0D;
+    color: #fff;
+    font-size: 1.3rem;
+}
+

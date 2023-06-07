@@ -1,0 +1,142 @@
+
+.contentBox{
+
+
+	z-index:2;
+	width: 1369px;
+	    position: relative;
+	margin-top:-555px;
+	height : 1000px;
+	margin-left:301px;
+	background: #BDBDBD;
+	border-radius: 30px 30px 0px 0px;
+}
+
+
+.contentBoxPoster{
+	position: relative;
+	padding: 2rem 1rem;
+	width: 300px;
+}
+
+.contentBoxPoster img{
+	border-radius:10px;
+	position: absolute;
+	width: 282px;
+	height: 424px;
+}
+
+.contentBoxInfo{
+	position: absolute; top:500px; left:550px;
+}
+
+.backimg{
+	width: 1928px;
+	height: 866px;
+	 object-fit: cover;
+	display: flex;
+	margin-bottom:40px;
+}
+
+.backGradation{
+	background: linear-gradient(360deg, #000000 0%, rgba(11, 11, 11, 0.815886) 33.33%, rgba(100, 100, 100, 0.558125) 39.58%, rgba(217, 217, 217, 0.377358) 48.44%, rgba(217, 217, 217, 0) 54.17%);
+	width: 1928px;
+	height: 866px;
+		position: absolute;
+		z-index:1;
+}
+
+.ul-text{
+	top:63px;
+  list-style:none;
+	position: relative;
+
+height: 424px;
+left: 111px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 41px;
+
+align-items: center;
+
+color: #030303;
+
+}
+.ul-text li{
+color:grey;
+}
+.ul-text li b{
+color: #030303;
+
+}
+
+.content_poster {
+	border-radius:10px;
+	position: absolute;
+	width: 300px;
+	height: 450px;
+}
+
+.movie_bookmark{
+	position: relative;
+top:63px;
+left: 65px;
+float: left;
+width: 300px;
+height: 450px;
+
+}
+
+
+
+ratingToPercent() {
+      const score = +this.restaurant.averageScore * 20;
+      return score + 1.5;
+ }
+
+.star-ratings {
+  color: #aaa9a9; 
+  position: relative;
+  unicode-bidi: bidi-override;
+  
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: #2b2a29;
+}
+ 
+.star-ratings-fill {
+  color: #fff58c;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-text-fill-color: gold;
+}
+ 
+.star-ratings-base {
+  z-index: 0;
+  padding: 0;
+}
+
+.myReview {
+	position: absolute;
+	top: 600px;
+	left: 100px;
+}
+
+.myReview textarea {
+	width: 300%;
+	height: 200px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: solid 2px #1E90FF;
+	border-radius: 5px;
+	font-size: 16px;
+	resize: both;
+}

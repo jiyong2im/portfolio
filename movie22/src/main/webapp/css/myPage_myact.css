@@ -1,0 +1,214 @@
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    
+
+}
+
+section{
+    
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.header{
+    padding: 2rem 3rem 2rem 3rem;
+    position: static;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    	background-color: black;
+    
+}
+
+.header .flex{
+    align-items: center;
+    display: flex;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem 2rem; */
+}
+
+.header .flex .navbar{
+    
+    margin-left: 3rem;
+}
+.header .flex .navbar a{
+    color: #fff;
+    padding-left: 2rem;
+    font-size: 1.3rem;
+}
+
+.header .flex .navbarRight{
+	margin-left: 30rem;
+	display: flex;
+	
+}
+
+
+.serch_Img{
+   
+    width: 38px;
+    height: 37px;
+    left: 350px;
+	padding-left: 0.4rem;
+
+    top: 4px;
+}
+.serch{
+	/* 검색하기 */
+
+position:absolute;
+
+width: 290px;
+height: 26px;
+left: 1110px;
+top: 37px;
+
+
+}
+input#searchInput{
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 40px;
+width:450px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+border: 0px solid #000;
+color: black;
+
+}
+
+
+.login{
+    color: #fff;
+    padding-left: 2rem;
+    font-size: 1.2rem;	
+    margin-top :0.6rem;
+}
+
+.banner {position: relative;
+
+display : flex;
+}
+
+.home .banner{
+    padding: 1.5rem 3rem;
+}
+
+.home .banner img{
+    width: 70rem;
+}
+
+
+
+/* MAIN */
+
+.main{
+    display: flex;
+    height: 1003px;
+}
+
+/* left */
+
+.main .left{
+    z-index: 100;
+    text-align: center;
+    padding: 5rem 0 0 0;
+    width: 28rem;
+    box-shadow: 0 0 16px #ccc;
+    
+}
+
+.main .left .page{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding: 3rem 0 0 0;
+}
+
+.main .left .page a {
+    padding: 3rem 0 0 0;
+}
+
+/* right */
+
+.main .right{
+    background-color: #F9FBFC;
+    width: 1472px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main .right .id p{
+    padding-top: 4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/*  북마크 */
+
+.main .right .id .content{
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 17rem;
+}
+
+
+
+.main .right .id .content .poster .size img{
+    margin: 0 1rem 0 0;
+	width: 170px;
+	height: 270px;
+}
+
+
+/* 평가 */
+
+.main .right .id .eval{
+    display: flex;
+    margin-left: 21rem;
+    margin-top: 2.5rem;
+}
+
+.main .right .id .eval .pho{
+    margin-right: 2rem;
+}
+
+.main .right .id .eval .since{
+    margin-top: 3rem;
+}
+
+.main .right .id .eval .since .star{
+    width: 5rem;
+    
+}
+
+.main .right .id .eval .since .ymd{
+    margin-top: 0.5rem;
+    font-size: 0.6rem;
+    color: #ccc;
+
+
+}
+
+.main .right .id .eval .review{
+    margin-left: 3rem;
+    width: 20rem;
+    height: 5rem;
+    margin-top: 1rem;
+}
+.main .right .id .eval .review input{
+    width: 30rem;
+    height: 11rem;
+    border:solid;
+    
+}
