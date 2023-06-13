@@ -11,7 +11,9 @@ public class BoardDao {
 	private Connection getConnection() throws Exception {
 		Class.forName("org.mariadb.jdbc.Driver");
 		return DriverManager.getConnection(
-                "jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
+//		String url = "jdbc:mysql://localhost:3306/sample";
+
 	}
 	
 	private String getCurrentTime() {
@@ -19,33 +21,32 @@ public class BoardDao {
 	}
 	
     public void insertReviewMovie(String nickname, String userId, int userNum, String review, int reviewStar, String id, String poster_path, String type) {
-    	try (		
-		Connection conn = getConnection();
-    	Statement stmt = conn.createStatement();
-		) {
+    	try (Connection conn = getConnection(); Statement stmt = conn.createStatement();) {
+    		
 			stmt.executeUpdate(String.format(
 					"insert into movie_review (m_review_star, member_num, m_review_content, m_review_time, m_review_content_id, member_nick, member_id, poster_path, type)" +
 								"values ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",reviewStar, userNum, review, getCurrentTime(), id, nickname, userId, poster_path, type ));
+			
 		} catch(Exception e){
 			e.printStackTrace();
 		} 
 	}
     
     public void insertReviewTv(String nickname, String userId, int userNum, String review, int reviewStar, String id, String poster_path, String type) {
-    	try (		
-		Connection conn = getConnection();
-    	Statement stmt = conn.createStatement();
+    	try (Connection conn = getConnection(); Statement stmt = conn.createStatement();
 		) {
-			
-			stmt.executeUpdate(String.format(
+    		
+    		stmt.executeUpdate(String.format(
 					"insert into tv_review (t_review_star, member_num, t_review_content, t_review_time, t_review_content_id, member_nick, member_id, poster_path, type)" +
 								"values ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",reviewStar, userNum, review, getCurrentTime(), id , nickname, userId, poster_path, type ));
+    		
 		} catch(Exception e){
 			e.printStackTrace();
 		} 
 	}
     
     public ArrayList<BoardDto> selectMovieReview(String id, int start, int limit) {
+    	
     	ArrayList<BoardDto> dtoList = new ArrayList<BoardDto>();
     	     try ( 
     	         Connection conn = getConnection();
@@ -56,14 +57,14 @@ public class BoardDao {
     	         while (rs.next()) {
     	         	BoardDto dto= new BoardDto();
 
-    	        	 dto.setReview_star(rs.getInt("m_review_star"));
-    	        	 dto.setMember_Num(rs.getInt("member_num"));
-    	        	 dto.setReview_time(rs.getString("m_review_time"));
-    	        	 dto.setReview_content_id(rs.getString("m_review_content_id"));
-    	        	 dto.setReview_content(rs.getString("m_review_content"));
-    	        	 dto.setMember_nick(rs.getString("member_nick"));
+    	        	dto.setReview_star(rs.getInt("m_review_star"));
+    	        	dto.setMember_Num(rs.getInt("member_num"));
+    	        	dto.setReview_time(rs.getString("m_review_time"));
+    	        	dto.setReview_content_id(rs.getString("m_review_content_id"));
+    	        	dto.setReview_content(rs.getString("m_review_content"));
+    	        	dto.setMember_nick(rs.getString("member_nick"));
 
-    	        	 dtoList.add(dto);
+    	        	dtoList.add(dto);
     	         }
     	         
     	     } catch(Exception e) {
@@ -71,8 +72,11 @@ public class BoardDao {
     	     }
     	     return dtoList;
     }
+    
     public ArrayList<BoardDto> selectTvReview(String id, int start, int limit) {
+    	
     	ArrayList<BoardDto> dtoList = new ArrayList<BoardDto>();
+    	
     	     try ( 
     	         Connection conn = getConnection();
     	         Statement stmt = conn.createStatement();
@@ -83,14 +87,14 @@ public class BoardDao {
     	         while (rs.next()) {
     	         	BoardDto dto= new BoardDto();
 
-    	        	 dto.setReview_star(rs.getInt("t_review_star"));
-    	        	 dto.setMember_Num(rs.getInt("member_num"));
-    	        	 dto.setReview_time(rs.getString("t_review_time"));
-    	        	 dto.setReview_content_id(rs.getString("t_review_content_id"));
-    	        	 dto.setReview_content(rs.getString("t_review_content"));
-    	        	 dto.setMember_nick(rs.getString("member_nick"));
+    	        	dto.setReview_star(rs.getInt("t_review_star"));
+    	        	dto.setMember_Num(rs.getInt("member_num"));
+    	        	dto.setReview_time(rs.getString("t_review_time"));
+    	        	dto.setReview_content_id(rs.getString("t_review_content_id"));
+    	        	dto.setReview_content(rs.getString("t_review_content"));
+    	        	dto.setMember_nick(rs.getString("member_nick"));
 
-    	        	 dtoList.add(dto);
+    	        	dtoList.add(dto);
     	         }
     	         
     	     } catch(Exception e) {
@@ -99,9 +103,6 @@ public class BoardDao {
     	     return dtoList;
     }
     
-    // movie 나오고 tv 나오고 이 페턴 반복인데 time으로 정렬하고 뽑는게 베스트 
-    // 2차원 배열으로 time순으로 정렬하면 될듯 한데 귀찮 
-    // 애초에 리뷰 테이블하나 였어야 함. 
     public ArrayList<BoardDto> selectUserMoiveReview(String userId, int start, int limit) {
     	ArrayList<BoardDto> dtoList = new ArrayList<BoardDto>();
     	     try ( 
@@ -347,9 +348,7 @@ public class BoardDao {
     }
 
 	public void setBookmark(String id, String userId, String poster_path, String type) {
-		try (		
-				Connection conn = getConnection();
-		    	Statement stmt = conn.createStatement();
+		try (Connection conn = getConnection();Statement stmt = conn.createStatement();
 				) {
 					stmt.executeUpdate(String.format(
 							"insert into mark (member_id, poster_path, mark_time, type, data_id)" +
@@ -362,9 +361,7 @@ public class BoardDao {
 	
 	
 	public void deleteBookmark(String id, String userId) {
-	try (	
-			Connection	conn = getConnection();
-			 Statement stmt = conn.createStatement();
+	try (Connection	conn = getConnection(); Statement stmt = conn.createStatement();
 	) {
 		stmt.executeUpdate(String.format("delete from mark where member_id='%s' and data_id='%s'", userId, id));
 
@@ -402,13 +399,13 @@ public class BoardDao {
     	         while (rs.next()) {
     	         	BoardDto dto= new BoardDto();
 
-    	        	 dto.setPoster_path(rs.getString("poster_path"));
-    	        	 dto.setMark_time(rs.getString("mark_time"));
-    	        	 dto.setType(rs.getString("type"));
-    	        	 dto.setData_id(rs.getString("data_id"));
-    	        	 dto.setMember_id(rs.getString("member_id"));
+    	        	dto.setPoster_path(rs.getString("poster_path"));
+    	        	dto.setMark_time(rs.getString("mark_time"));
+    	        	dto.setType(rs.getString("type"));
+    	        	dto.setData_id(rs.getString("data_id"));
+    	        	dto.setMember_id(rs.getString("member_id"));
 
-    	        	 dtoList.add(dto);
+    	        	dtoList.add(dto);
     	         }
     	         
     	     } catch(Exception e) {
@@ -422,8 +419,6 @@ public class BoardDao {
         try (
             Connection conn = getConnection();
             Statement stmt = conn.createStatement();
-        	
-        		//이거아님
             ResultSet rs = stmt.executeQuery("select count(*) from mark where member_id="+userId);
         ) {
             if (rs.next()) {
@@ -462,11 +457,9 @@ public class BoardDao {
     	}
     	return pgnList;
     }
-    //////////////////////////////
-    public void setShareHeader(int userNum, String bank, String accountNum, String userId) {
-        try (      
-              Connection conn = getConnection();
-               Statement stmt = conn.createStatement();
+    
+        public void setShareHeader(int userNum, String bank, String accountNum, String userId) {
+        try (Connection conn = getConnection(); Statement stmt = conn.createStatement();
               ) {
                  stmt.executeQuery(String.format(
                  "insert into shareHeader (member_num, shareHeader_bankName, shareHeader_accountNum, member_id) values (%d,'%s','%s','%s');",
@@ -477,9 +470,7 @@ public class BoardDao {
      }
       
      public void setShareParty(int userNum, int ottprice, String selectOption) {
-        try (      
-              Connection conn = getConnection();
-               Statement stmt = conn.createStatement();
+        try (Connection conn = getConnection(); Statement stmt = conn.createStatement();
               ) {
                  String curTime = LocalDate.now() +  LocalTime.now().toString().substring(0,8);
                  stmt.executeQuery(String.format(
@@ -491,9 +482,7 @@ public class BoardDao {
      }
      
      public void setShareMember(int userNum, int shareParty_num) {
-        try (      
-              Connection conn = getConnection();
-               Statement stmt = conn.createStatement();
+        try (Connection conn = getConnection(); Statement stmt = conn.createStatement();
               ) {
                  stmt.executeQuery(String.format(
                  "insert into shareMember (member_num, shareParty_num) values (%d,%d);",
@@ -504,20 +493,20 @@ public class BoardDao {
      }
       
      public void setPartyUpdate(int shareParty_gauge) {
-        try (      
-              Connection conn = getConnection();
-               Statement stmt = conn.createStatement();
+        try (Connection conn = getConnection(); Statement stmt = conn.createStatement();
               ) {
-                 
+                
                  stmt.executeUpdate(String.format(
                  "update shareParty set shareParty_gauge =%d",
                              shareParty_gauge));
+                 
               } catch(Exception e){
                  e.printStackTrace();
               } 
      }
      public ArrayList<Integer> selectMyOttCheck(String userNum) {
      	ArrayList<Integer> List = new ArrayList<Integer>();
+     	
      	     try ( 
      	         Connection conn = getConnection();
      	         Statement stmt = conn.createStatement();
@@ -588,7 +577,7 @@ public ArrayList<BoardDto> selectMyOttLeader(String userNum) {
  	        	 dto.setShareParty_num(rs.getInt("shareParty_num"));
  	        	 
 
- 	     	    dtoList.add(dto);
+ 	     	     dtoList.add(dto);
 
  	         }
  	         
@@ -649,9 +638,9 @@ public ArrayList<BoardDto> selectMyOttLeader(String userNum) {
 	 	         ResultSet rs = stmt.executeQuery("select * from shareMember");
 	 	     ) {
 	 	    	while(rs.next()) {
-	 	         	 BoardDto dto= new BoardDto();
-	 	        	 dto.setShareParty_num(rs.getInt("shareParty_num"));
-	 	        	 dto.setMem_num(rs.getString("member_num"));
+	 	         	BoardDto dto= new BoardDto();
+	 	        	dto.setShareParty_num(rs.getInt("shareParty_num"));
+	 	        	dto.setMem_num(rs.getString("member_num"));
 	 	     	    dtoList.add(dto);
 	 	         }
 	 	         
@@ -675,9 +664,9 @@ public ArrayList<BoardDto> selectMyOttLeader(String userNum) {
 	 	         ResultSet rs = stmt.executeQuery("select * from shareParty where shareParty_num="+i.getShareParty_num());
 	 	     ) {
 	 	    	while(rs.next()) {
-	 	         	 BoardDto dto= new BoardDto();
-	 	        	 dto.setMoney(rs.getInt("ott_price")/rs.getInt("shareParty_gauge"));
-	 	        	 dto.setMem_num(i.getMem_num());
+	 	         	BoardDto dto= new BoardDto();
+	 	        	dto.setMoney(rs.getInt("ott_price")/rs.getInt("shareParty_gauge"));
+	 	        	dto.setMem_num(i.getMem_num());
 	 	     	    dtoList.add(dto);
 	 	         }
 	 	         
@@ -718,9 +707,9 @@ public ArrayList<BoardDto> selectMyOttLeader(String userNum) {
 	 	         ResultSet rs = stmt.executeQuery("select * from shareParty");
 	 	     ) {
 	 	    	while(rs.next()) {
-	 	         	 BoardDto dto= new BoardDto();
-	 	        	 dto.setMoney(rs.getInt("ott_price")/rs.getInt("shareParty_gauge"));
-	 	        	 dto.setMem_num(rs.getString("header_num"));
+	 	         	BoardDto dto= new BoardDto();
+	 	        	dto.setMoney(rs.getInt("ott_price")/rs.getInt("shareParty_gauge"));
+	 	        	dto.setMem_num(rs.getString("header_num"));
 	 	     	    dtoList.add(dto);
 	 	         }
 	 	         
@@ -754,95 +743,4 @@ public ArrayList<BoardDto> selectMyOttLeader(String userNum) {
 	
 
 	}
-//
-//stmt.executeUpdate(String.format(
-//		"update board set writer='%s', title ='%s', content ='%s', regtime ='%s' where num=%d",
-//					 dto.getWriter(), dto.getTitle(), dto.getContent(), getCurrentTime(), dto.getNum()));
-//
-//	public void deleteOne(int num) {
-//		try (	
-//				Connection	conn = getConnection();
-//				 Statement stmt = conn.createStatement();
-//		) {
-//			stmt.executeUpdate("delete from board where num="+num);
-//
-//		} catch(Exception e){
-//			e.printStackTrace();
-//		} 
-//		
-//	}
-
-
-
-			
-//	public Boolean setTvBookmark(String id, String userId, String poster_path, String type) {
-//		try (		
-//				Connection conn = getConnection();
-//		    	Statement stmt = conn.createStatement();
-//				) {
-//					stmt.executeUpdate(String.format(
-//							"insert into movie_review (m_review_star, member_num, m_review_content, m_review_time, m_review_content_id, member_nick)" +
-//										"values ('%d', '%d', '%s', '%s', '%s', '%s')",reviewStar, userNum, review, getCurrentTime(), id, nickname ));
-//				} catch(Exception e){
-//					e.printStackTrace();
-//				} 
-//			}
-//}
-		
-
-
-
-//	
-//	public BoardDto setReview(String nickname, String userId, String text) {
-//	    
-//	    BoardDto dto = null;
-//
-//	    try (
-//	        Connection conn = getConnection();
-//	        Statement stmt = conn.createStatement();
-//
-//	        ResultSet rs = stmt.executeQuery(
-//	                "select * from board where num=");
-//	    ) {
-//	        if (rs.next()) {
-//	        	dto= new BoardDto(rs.getInt("num"),rs.getString("writer"),
-//	        			rs.getString("title"), rs.getString("content"),rs.getString("regtime"),
-//	        			rs.getInt   ("hits"));
-//
-//
-//	            
-//	            if (incHits) {
-//	                stmt.executeUpdate(
-//	                       "update board set hits=hits+1 where num=" + num);
-//	            }
-//	        }
-//	    } catch(Exception e) {
-//	        e.printStackTrace();
-//	    }
-//	    
-//	    return dto;
-//	}
-//	
-//	
-
-//    	
-//    public void updateOne(BoardDto dto) {
-//
-//		try (
-//				Connection conn = getConnection();
-//				Statement stmt = conn.createStatement();
-//		) {
-//			
-//			stmt.executeUpdate(String.format(
-//					"update board set writer='%s', title ='%s', content ='%s', regtime ='%s' where num=%d",
-//								 dto.getWriter(), dto.getTitle(), dto.getContent(), getCurrentTime(), dto.getNum()));
-//			
-//
-//		} catch(Exception e){
-//			e.printStackTrace();
-//		} 
-//		
-//    }
-//// 여러개의 값을 가져와서 묶는게 ArrayList 컬렉션 Linked list 라고 보면됨
-
 

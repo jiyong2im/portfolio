@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				Class.forName("org.mariadb.jdbc.Driver");
 		try( 
 		Connection conn = DriverManager.getConnection(
-				"jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(String.format("select * from shareParty%s where ott_name ='넷플릭스' and shareParty_gauge<4 order by shareParty_num desc ",bid));
 		) {
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				Class.forName("org.mariadb.jdbc.Driver");
 		try( 
 		Connection conn = DriverManager.getConnection(
-				"jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(String.format("select * from shareParty%s where ott_name ='왓챠' and shareParty_gauge<4 order by shareParty_num desc ",bid));
 		) {
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				Class.forName("org.mariadb.jdbc.Driver");
 		try( 
 		Connection conn = DriverManager.getConnection(
-				"jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(String.format("select * from shareParty%s where ott_name ='디즈니플러스' and shareParty_gauge<4 order by shareParty_num desc ",bid));
 		) {
@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				Class.forName("org.mariadb.jdbc.Driver");
 		try( 
 		Connection conn = DriverManager.getConnection(
-				"jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(String.format("select * from shareParty%s where ott_name ='웨이브' and shareParty_gauge<4 order by shareParty_num desc ",bid));
 		) {
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				Class.forName("org.mariadb.jdbc.Driver");
 		try( 
 		Connection conn = DriverManager.getConnection(
-				"jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(String.format("select * from shareParty%s where ott_name ='티빙' and shareParty_gauge<4 order by shareParty_num desc ",bid));
 		) {

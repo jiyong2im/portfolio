@@ -127,7 +127,7 @@ String bid = (tmp != null && tmp.length() > 0) ? tmp : "";
 								Class.forName("org.mariadb.jdbc.Driver");
 						try( 
 						Connection conn = DriverManager.getConnection(
-								"jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+				                "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
 						Statement stmt = conn.createStatement();
 						ResultSet rs = stmt.executeQuery(String.format("select * from shareParty%s where shareParty_gauge<4  order by shareParty_num desc ",bid));
 						) {

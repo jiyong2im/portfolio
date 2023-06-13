@@ -134,7 +134,7 @@ request.setCharacterEncoding("utf-8");
     Class.forName("org.mariadb.jdbc.Driver");
      try (
          Connection conn = DriverManager.getConnection(
-                "jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                 "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from animal2_20210624 WHERE "+catgo_r+" LIKE '"+search_r+"';");
 

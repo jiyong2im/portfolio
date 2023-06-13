@@ -10,7 +10,7 @@
     Class.forName("org.mariadb.jdbc.Driver");
      try (
          Connection conn = DriverManager.getConnection(
-               "jdbc:mariadb://localhost/movieverse17", "movieverse17", "shingu1718!");
+                 "jdbc:mariadb://localhost:3306/movieverse17", "root", "1234");
          Statement stmt = conn.createStatement();
          ResultSet rs = stmt.executeQuery(String.format(
                "select * from member where member_id='%s' and member_pw='%s'", id, pw));
